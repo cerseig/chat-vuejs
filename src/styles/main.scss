@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+li {
+  list-style: none;
+}
+#app {
+    background-image: url('assets/banquise.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    section {
+      width: 100%;
+      height: 100%;
+    }
+    header {
+      height: 100px;
+      width: 100%;
+      position: sticky;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #D7D6D6;
+      background-color: #fff;
+      .content {
+        text-align: center;
+        img {
+          height: 30px;
+          background-color: #F9F7F7;
+          border-radius: 50%;
+          padding: 10px;
+        }
+        h2 {
+          font-family: 'Avenir Next';
+          font-size: 1em;
+          font-weight:  normal;
+        }
+      }
+    }
+    main {
+      display: flex;
+      width: 100%;
+      height: calc(100% - 101px);
+      .users-column, .user-column {
+        width: 20%;
+      }
+      .users-column {
+        background-color: rgba(255, 255, 255, 0.8);
+
+      }
+      .user-column {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      .messages-content {
+        width: 60%;
+        overflow: auto;
+      }
+    }
+    .message-content {
+      display: flex;
+      font-family: 'Avenir Next';
+      font-weight: normal;
+      background: #fff;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 20px;
+      img {
+        height: 30px;
+        background-color: #F9F7F7;
+        border-radius: 50%;
+        padding: 10px;
+      }
+    }
+    .login {
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/login-bg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .content-login {
+            text-align: center;
+            width: 280px;
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translateY(-50%);
+            h1 {
+                font-family: 'Pacifico';
+                font-size: 3.2em;
+                margin-bottom: 30px;
+                color: #316746;
+                letter-spacing: 1px;
+            }
+            p.error {
+                font-family: 'Avenir Next';
+                margin-bottom: 10px;
+            }
+            input {
+                width: 100%;
+                height: 45px;
+                border-radius: 25px;
+                border: none;
+                text-align: center;
+                color: #9B9B9B;
+                outline: 0;
+            }
+            input::placeholder {
+                color: #9B9B9B;
+                font-family: 'Avenir Next';
+            }
+            div.avatar-choice {
+                width: 100%;
+                height: 45px;
+                border-radius: 25px;
+                background-color: #fff;
+                color: #9B9B9B;
+                font-family: 'Avenir Next';
+                margin: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.7em;
+                cursor: pointer;
+            }
+            button.log {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                font-weight: bold;
+                font-size: 1.5em;
+                margin: 0;
+                color: #316746;
+                background-color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        .content-avatars {
+            transition: all 0.5s ease;
+            display: none;
+            background: rgba(255, 255, 255, 1);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 900px;
+            height: 600px;
+            border-radius: 50px;
+            .closePopup {
+              position: absolute;
+              right: 20px;
+              top: 20px;
+              color: #9B9B9B;
+              opacity: 0.7;
+              transition: all 0.2s ease;
+            }
+            .closePopup:hover {
+              opacity: 1;
+            }
+            h2 {
+                text-align: center;
+                color: #9B9B9B;
+                font-family: 'Avenir Next';
+                font-weight: normal;
+                font-size: 1.2em;
+                margin: 50px 0;
+            }
+            .avatars {
+              display: flex;
+              .avatars-list {
+                width: 100%;
+                .row {
+                  display: flex;
+                }
+                label {
+                  flex: 1;
+                  text-align: center;
+                }
+                  label > input{ /* HIDE RADIO */
+                    visibility: hidden; /* Makes input not-clickable */
+                    position: absolute; /* Remove input from document flow */
+                  }
+                  label > img {
+                      height: 180px;
+                      margin: 20px 0;
+                  }
+                  label > input + img{ /* IMAGE STYLES */
+                    cursor:pointer;
+                    border:2px solid transparent;
+                    transition: all 0.2s ease;
+                  }
+                  label > input:hover + img {
+                    opacity: 0.5;
+                  }
+                  label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+                    opacity: 0.5;
+                  }
+              }
+            }
+        }
+    }
+}
+.theme-ocean {
+    background-image: url('assets/desert.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.theme-jungle {
+    background-image: url('assets/jungle.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.theme-banquise {
+    background-image: url('assets/banquise.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
