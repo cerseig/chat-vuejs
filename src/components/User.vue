@@ -1,6 +1,8 @@
 <template>
   <li>
-    {{ data.username }}
+    <!-- <img :src="data.avatarUrl" alt=""> -->
+    <img src="../assets/pinguin.png" alt="">
+    <h5>{{ data.username }}</h5>
   </li>
 </template>
 

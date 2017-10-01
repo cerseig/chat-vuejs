@@ -1,7 +1,7 @@
 <template>
-  <form @submit.prevent="onSubmit">
-    <input type="text" placeholder="message" v-model="message">
-    <button>Envoyer</button>
+  <form @submit.prevent="onSubmit" class="form-message">
+    <input type="text"  class="textarea" placeholder="Type something..." v-model="message">
+    <button class="send-message"><i class="fa fa-paper-plane-o"></i></button>
   </form>
 </template>
 
@@ -16,7 +16,13 @@ export default {
     onSubmit (e) {
       this.sendMessage(this.message)
       this.message = ''
+    },
+    onTyping (e) {
+      this.isTyping(this.$store.user)
     }
+  },
+  mounted () {
+    document.querySelector('textarea').addEventListener('keyup', this.isTyping)
   }
 }
 </script>
